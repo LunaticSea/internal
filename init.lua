@@ -4,5 +4,7 @@ return {
   clear_message = require('clear_message'),
   get_title = require('get_title'),
   page = require('page'),
-  radio_station = require('radio_station')
+  radio_station = require('radio_station'),
+  player_button = require("player_button"),
+  reply_interaction = require('reply_interaction')
 }

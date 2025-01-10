@@ -1,7 +1,4 @@
--- import { Manager } from '../manager.js'
--- import { RainlinkPlayer } from 'rainlink'
-
-local arb, get = require('class')('AutoReconnectBuilder')
+local arb = require('class')('AutoReconnectBuilder')
 
 function arb:__init(client, player)
   self._client = client
