@@ -7,5 +7,7 @@ return {
   button_page = require('button_page'),
   radio_station = require('radio_station'),
   player_button = require("player_button"),
-  reply_interaction = require('reply_interaction')
+  reply_interaction = require('reply_interaction'),
+  convert_time = require('convert_time'),
+  format_duration = require('format_duration'),
 }
