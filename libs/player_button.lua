@@ -10,7 +10,7 @@ local function playerRowOne(client, disable, edited)
       disabled = disable
     },
     {
-      id = "replay",
+      id = "previous",
       type = 2,
       style = 2,
       emoji = client.config.emojis.PLAYER.previous,

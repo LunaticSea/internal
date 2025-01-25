@@ -22,8 +22,8 @@ function reply_interaction:execute()
   local timeout = self._client.config.utilities.DELETE_MSG_TIMEOUT
 
   setTimeout(timeout, coroutine.wrap(function ()
-    if not setup and setup.channel ~= self._inteaction.channel.id and msg then
-      msg:delete()
+    if (not setup or setup.channel ~= self._inteaction.channel.id) and msg then
+      self._inteaction:deleteReply()
     end
   end))
 end
