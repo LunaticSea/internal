@@ -289,13 +289,33 @@ local RadioStations = {
   -- }
 }
 
+local RadioStationNewInterface = function ()
+  local result = {}
+  local no =  1
+  for areaKey, arrayData in pairs(RadioStations) do
+    result[areaKey] = {}
+    for _, ele in pairs(arrayData) do
+      local splited = string.split(ele, '%S+')
+      local name = splited[1]
+      local link = splited[2]
+      local data = {
+        name = name,
+        link = link,
+        no = no
+      }
+      no = no + 1
+      table.insert(result[areaKey], data)
+    end
+  end
+  return result
+end
 
 local RadioStationArray = function ()
   local result = {}
   local no =  1
   for __, arrayData in pairs(RadioStations) do
     for _, ele in pairs(arrayData) do
-      local splited = string.split(ele, ' ')
+      local splited = string.split(ele, '%S+')
       local name = splited[1]
       local link = splited[2]
       local data = {
@@ -312,5 +332,6 @@ end
 
 return {
   RadioStations = RadioStations,
-  RadioStationArray = RadioStationArray
+  RadioStationArray = RadioStationArray,
+  RadioStationNewInterface = RadioStationNewInterface
 }
